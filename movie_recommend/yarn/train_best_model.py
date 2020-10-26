@@ -104,7 +104,7 @@ def get_best_model():
     max_iter_list = [20]
     reg_param_list = [0.1]
     metrics = run_train_model(train_data, validation_data, rank_list, max_iter_list, reg_param_list)
-    best_params = sorted(metrics, key=lambda x: -x[0])
+    best_params = sorted(metrics, key=lambda x: x[1])
     best_params = best_params[0]
     print('模型性能：')
     print('duration', best_params[0])
